@@ -1,10 +1,20 @@
+
+from operator import itemgetter
 def main():
     book_path = "books/frankenstein.txt"
     text = get_book_text(book_path)
     num_words = wordcount(text)
     number_of_letters = countcharacters(text)
-    print(f"{num_words} words found in the document")
-    print(f"{number_of_letters} letters found in the document")
+    number_of_letters_total = list_of_letter(number_of_letters)
+   # print(f"{num_words} words found in the document")
+   # print(f"{number_of_letters} letters found in the document")
+   # print(f"{num_words} words found in the document")
+   # print(f"{number_of_letters_total} letters found in the document")
+
+        
+        
+
+
 
 def get_book_text(path):
     with open(path) as f:
@@ -28,4 +38,15 @@ def countcharacters(text):
             letters[lowered_string] = 1   
     return letters   
 
+def get_count(letter_dict):
+        return list(letter_dict.values())[0]
+
+def list_of_letter(dict):
+    list_of_letters = []
+    for letter in dict:
+        if letter.isalpha():
+            is_alpha = {letter : dict[letter]}
+            list_of_letters.append(is_alpha) 
+    list_of_letters.sort(reverse=True, key=get_count)
+    return list_of_letters
 main()
