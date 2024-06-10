@@ -1,4 +1,3 @@
-import re
 
 from operator import itemgetter
 def main():
