@@ -4,11 +4,6 @@ def main():
     num_words = wordcount(text)
     number_of_letters = countcharacters(text)
     number_of_letters_total = list_of_letter(number_of_letters)
-   # print(f"{num_words} words found in the document")
-   # print(f"{number_of_letters} letters found in the document")
-   # print(f"{num_words} words found in the document")
-   # print(f"{number_of_letters_total} letters found in the document")
-   # print(str(number_of_letters_total[1].keys())[12])
     print(f"--- Begin report of {book_path} ---")
     print(f"{num_words} words found in the document")
     for letters in number_of_letters_total:
