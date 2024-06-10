@@ -1,3 +1,4 @@
+import re
 
 from operator import itemgetter
 def main():
@@ -10,8 +11,12 @@ def main():
    # print(f"{number_of_letters} letters found in the document")
    # print(f"{num_words} words found in the document")
    # print(f"{number_of_letters_total} letters found in the document")
-
-        
+   # print(str(number_of_letters_total[1].keys())[12])
+    print(f"--- Begin report of {book_path} ---")
+    print(f"{num_words} words found in the document")
+    for letters in number_of_letters_total:
+        print(f"The '{str(letters.keys())[12]}' character was found {letters[str(letters.keys())[12]]} times")
+    print ("--- End report ---")    
         
 
 
